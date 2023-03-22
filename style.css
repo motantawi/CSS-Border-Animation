@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #333;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.card {
+  width: 200px;
+  height: 250px;
+  background-color: #000;
+  position: relative;
+  box-shadow: 0 0 5px 2px #000;
+  cursor: pointer;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-280deg);
+  width: 160%;
+  height: 130%;
+  background-image: conic-gradient(
+    #ff00bb 0deg,
+    #ff00bb 90deg,
+    transparent 130deg,
+    transparent 180deg,
+    #4530ff 180deg,
+    #4530ff 270deg,
+    transparent 310deg,
+    transparent 360deg
+  );
+  transition: transform 2s;
+}
+
+.card:hover::before {
+  transform: translate(-50%, -50%) rotate(-1000deg);
+}
+
+.card::after {
+  content: "Mustafa Tantawy";
+  color: #ddd;
+  position: absolute;
+  background-color: #000;
+  display: flex;
+  font-size: 17px;
+  align-items: center;
+  justify-content: center;
+  height: 242px;
+  width: 192px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
